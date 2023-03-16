@@ -1,0 +1,45 @@
+--Create a general store database 
+
+/** Store Products
+TV
+Shirts 
+Pants
+Socks
+Hats
+Jackets
+Coats
+Gloves
+Blankets
+Bikes 
+Tools
+Toys
+Knives
+Ammo
+Tires
+**/
+
+create table store (id INTEGER PRIMARY KEY, name TEXT, cost REAL, size TEXT, price REAL);
+insert into store values (1, "TV", 500, "65in", 600),
+(2, "Shirts", 5, "LARGE", 10),
+(3, "Pants", 6, "Small", 8),
+(4, "Socks", 3, "medium", 5),
+(5, "Hats", 4, "Large", 7),
+(6, "Jackets", 12, "Xlarge", 24),
+(7, "Coats", 20, "Small", 50),
+(8, "Gloves", 3, "medium", 6),
+(9, "Blankets", 12, "XXlarge", 30),
+(10, "Bikes", 76, "29in", 250),
+(11, "Tools", 50, "Standard", 125),
+(12, "Toys", 25, "kids", 36.99),
+(13, "Knives", 30, "large", 59.99),
+(14, "Ammo", 12.99, "9mm", 24.99),
+(15, "Tires", 100, "20in", 189.99);
+
+--display the database ordered by price 
+
+select * from store;
+select * from store where price > 5 order by price;
+
+--what is the average price
+
+select AVG(price) from store;
