@@ -1,0 +1,34 @@
+CREATE TABLE movie_stars (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    movies TEXT);
+
+Insert into movie_stars (fullname, age, movies) values 
+("Patrick Pingleton", 28, "Dawn Raising"),
+("Garrett Lowe", 27, "Star Falling"),
+("Mariah Fender", 25, "The Awakening"),
+("Kiara Velez", 25, "The Shattering");
+
+CREATE TABLE couples (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person1_id integer,
+    person2_id integer);
+
+Insert into couples ( person1_id, person2_id) 
+    values (1, 3);
+Insert into couples ( person1_id, person2_id) 
+    values (2, 4);    
+
+** display the data in the movie star table
+select * from movie_stars;
+
+**only displaying relevant data from movie star table
+select fullname, movies from movie_stars;
+
+** displaying the movie stars and their spouses
+select a.fullname, b.fullname from couples 
+    join movie_stars a
+    on couples.person1_id = a.id
+    join movie_stars b
+    on couples.person2_id = b.id;
